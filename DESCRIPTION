@@ -10,5 +10,5 @@ License: GPL (>= 2)
 Depends: BH, RcppArmadillo, Rcpp (>= 0.12.5)
 Imports:
     Rcpp (>= 0.12.5)
-LinkingTo: Rcpp
+LinkingTo: Rcpp, BH
 RoxygenNote: 6.0.1

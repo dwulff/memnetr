@@ -70,7 +70,7 @@ count_tokens = function(text, order = T){
   words = tm::Boost_tokenizer(text)
 
   # get tab
-  tab = as.data.frame(cnt_tokens(words))
+  tab = as.data.frame(cnt_tokens(words), stringsAsFactors = FALSE)
 
   # name
   names(tab) = c('token', 'count')
@@ -88,6 +88,48 @@ count_tokens = function(text, order = T){
   return(tab)
   }
 
+#' Count tokens
+#'
+#' @export
+
+get_td = function(texts, order = T){
+
+  #
+  count_list = list()
+
+  #
+  for(i in 1:length(texts)){
+
+  # tokenize
+  words = tm::Boost_tokenizer(texts[[i]])
+
+  # get tab
+  tab = memnetr:::cnt_tokens(words)
+
+  # counts
+  counts = as.numeric(tab[,2])
+  names(counts) = tab[,1]
+
+  count_list[[i]] = counts
+
+  }
+
+  #
+  words = unique(unlist(sapply(count_list, names)))
+
+  td = Matrix::Matrix(0, nrow = length(words), ncol = length(texts), sparse = TRUE)
+  rownames(td) = words
+  for(i in 1:length(texts)){
+
+    counts = count_list[[i]]
+    td[names(counts), i] = counts
+
+  }
+
+
+  # return
+  return(td)
+}
 
 
 #' Detect specific words

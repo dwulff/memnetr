@@ -5,8 +5,8 @@
 #include <Rcpp.h>
 #include <iostream>
 #include <regex>
-
 #include <boost/algorithm/string/replace.hpp>
+
 using namespace Rcpp;
 
 
@@ -58,7 +58,7 @@ StringVector reads_texts_remove(CharacterVector paths, std::vector<std::string>&
 
 
 // [[Rcpp::export]]
-NumericVector upper_mat(NumericMatrix mat) {
+NumericVector upper_mat_(NumericMatrix mat) {
   int nrow = mat.nrow();
   int len = (nrow * nrow)/2 - nrow/2;
   NumericVector res(len);

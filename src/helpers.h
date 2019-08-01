@@ -8,6 +8,11 @@
 //
 //////////////////////////////////////////////////////////////////////////////
 
+// find integer
+inline bool find_int(std::vector<int> vec, int el){
+  return std::find(vec.begin(), vec.end(), el) != vec.end();
+}
+
 // cumulative sum
 inline Rcpp::NumericVector csum(Rcpp::NumericVector x){
   int i, j, n = x.size();

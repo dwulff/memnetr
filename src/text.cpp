@@ -1,6 +1,7 @@
 #include <Rcpp.h>
 #include <string>
 #include <iostream>
+#include "helpers.h"
 
 using namespace Rcpp;
 
@@ -125,12 +126,6 @@ IntegerMatrix tt_count(IntegerMatrix td_mat){
   return tt_unit;
   }
 
-
-
-
-bool find_int(std::vector<int> vec, int el){
-  return std::find(vec.begin(), vec.end(), el) != vec.end();
-  }
 
 
 // remove rows in numeric matrix

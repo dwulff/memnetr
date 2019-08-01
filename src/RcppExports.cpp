@@ -876,14 +876,14 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// upper_mat
-NumericVector upper_mat(NumericMatrix mat);
-RcppExport SEXP _memnetr_upper_mat(SEXP matSEXP) {
+// upper_mat_
+NumericVector upper_mat_(NumericMatrix mat);
+RcppExport SEXP _memnetr_upper_mat_(SEXP matSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< NumericMatrix >::type mat(matSEXP);
-    rcpp_result_gen = Rcpp::wrap(upper_mat(mat));
+    rcpp_result_gen = Rcpp::wrap(upper_mat_(mat));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -1375,7 +1375,7 @@ static const R_CallMethodDef CallEntries[] = {
     {"_memnetr_match_cc", (DL_FUNC) &_memnetr_match_cc, 3},
     {"_memnetr_read_texts", (DL_FUNC) &_memnetr_read_texts, 1},
     {"_memnetr_reads_texts_remove", (DL_FUNC) &_memnetr_reads_texts_remove, 2},
-    {"_memnetr_upper_mat", (DL_FUNC) &_memnetr_upper_mat, 1},
+    {"_memnetr_upper_mat_", (DL_FUNC) &_memnetr_upper_mat_, 1},
     {"_memnetr_serialize_tt", (DL_FUNC) &_memnetr_serialize_tt, 2},
     {"_memnetr_serialize_td", (DL_FUNC) &_memnetr_serialize_td, 2},
     {"_memnetr_rescorla_wagner", (DL_FUNC) &_memnetr_rescorla_wagner, 6},

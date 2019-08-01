@@ -364,8 +364,8 @@ reads_texts_remove <- function(paths, patterns) {
     .Call('_memnetr_reads_texts_remove', PACKAGE = 'memnetr', paths, patterns)
 }
 
-upper_mat <- function(mat) {
-    .Call('_memnetr_upper_mat', PACKAGE = 'memnetr', mat)
+upper_mat_ <- function(mat) {
+    .Call('_memnetr_upper_mat_', PACKAGE = 'memnetr', mat)
 }
 
 serialize_tt <- function(tt_mat, include_diag = TRUE) {

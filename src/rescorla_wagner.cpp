@@ -1,4 +1,5 @@
 #include <Rcpp.h>
+#include "helpers.h"
 using namespace Rcpp;
 
 // create long matrix from term-term matrix
@@ -63,10 +64,6 @@ std::vector<std::pair<std::vector<int>, int> > get_unit_events(IntegerMatrix td_
       }
     }
   return events;
-  }
-
-bool find_int(std::vector<int> vec, int el){
-  return std::find(vec.begin(), vec.end(), el) != vec.end();
   }
 
 // return term-document matrix with unit weights
